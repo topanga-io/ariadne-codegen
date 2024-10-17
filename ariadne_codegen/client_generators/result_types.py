@@ -52,6 +52,8 @@ from .constants import (
     ANY,
     BASE_MODEL_CLASS_NAME,
     BEFORE_VALIDATOR,
+    DECIMAL,
+    DECIMAL_MODULE,
     DEFAULT_KEYWORD,
     DISCRIMINATOR_KEYWORD,
     FIELD_CLASS,
@@ -101,6 +103,7 @@ class ResultTypesGenerator:
         self.plugin_manager = plugin_manager
 
         self._imports: List[ast.ImportFrom] = [
+            generate_import_from([DECIMAL], DECIMAL_MODULE),
             generate_import_from(
                 [OPTIONAL, UNION, ANY, LIST, LITERAL, ANNOTATED], TYPING_MODULE
             ),
