@@ -30,6 +30,8 @@ from .constants import (
     ANY,
     BASE_MODEL_CLASS_NAME,
     BASE_MODEL_IMPORT,
+    DECIMAL,
+    DECIMAL_MODULE,
     FIELD_CLASS,
     LIST,
     MODEL_REBUILD_METHOD,
@@ -62,6 +64,7 @@ class InputTypesGenerator:
         self.plugin_manager = plugin_manager
 
         self._imports = [
+            generate_import_from([DECIMAL], DECIMAL_MODULE),
             generate_import_from(
                 [OPTIONAL, ANY, UNION, LIST, ANNOTATED], TYPING_MODULE
             ),

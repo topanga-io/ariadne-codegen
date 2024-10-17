@@ -6,7 +6,7 @@ SIMPLE_TYPE_MAP = {
     "ID": "str",
     "Int": "int",
     "Boolean": "bool",
-    "Float": "float",
+    "Float": "Decimal",
 }
 
 UPLOAD_CLASS_NAME = "Upload"
@@ -18,6 +18,7 @@ UNION = "Union"
 ANY = "Any"
 TYPE = "Type"
 TYPE_CHECKING = "TYPE_CHECKING"
+DECIMAL = "Decimal"
 DICT = "Dict"
 TUPLE = "Tuple"
 CALLABLE = "Callable"
@@ -72,6 +73,7 @@ TYPENAME_ALIAS = "typename__"
 
 TYPING_MODULE = "typing"
 GRAPHQL_MODULE = "graphql"
+DECIMAL_MODULE = "decimal"
 PYDANTIC_MODULE = "pydantic"
 FIELD_CLASS = "Field"
 ALIAS_KEYWORD = "alias"

@@ -399,12 +399,15 @@ def parse_directives(
     nullable_directives = (INCLUDE_DIRECTIVE_NAME, SKIP_DIRECTIVE_NAME)
     directives_names = [d.name.value for d in directives]
 
+    default = None
+    if is_nullable(annotation):
+        default = generate_constant(None)
+
     if any(n in nullable_directives for n in directives_names):
         if not is_nullable(annotation):
             annotation = generate_nullable_annotation(annotation)
-        return annotation, generate_constant(None)
 
-    return annotation, None
+    return annotation, default
 
 
 def is_nullable(annotation: Annotation) -> bool:
